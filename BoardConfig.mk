@@ -21,12 +21,20 @@ TARGET_USES_UEFI := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
+# Device path
+DEVICE_PATH := device/realme/RMX3834
+
 # Display
 TARGET_SCREEN_DENSITY := 320
 
 # Enable CPUSets
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
+
+# For building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Metadata
 BOARD_ROOT_EXTRA_FOLDERS += metadata
@@ -38,3 +46,6 @@ TARGET_BOOTLOADER_BOARD_NAME := RMX3834
 
 # SPRD hardware
 BOARD_USES_SPRD_HARDWARE := true
+
+# System.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
